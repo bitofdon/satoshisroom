@@ -1,0 +1,22 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Satoshis Room</title>
+        {% else %}
+        <title>Welcome to Satoshis Room</title>
+        {% endif %}
+    </head>
+<body>
+  <!--navigation bar "navbar navbar-fixed-top" -->
+  {% block navbar %}
+    <div class="navbar navbar-dark bg-dark">
+      <a href="/index">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/login">Login</a>
+    </div>
+  {% endblock %}
+  <hr>
+  <!--page specific content-->
+  {% block content %}{% endblock%}
+</body>
+</html>
