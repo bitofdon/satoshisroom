@@ -11,15 +11,17 @@ def index():
         #...
     return render_template('index.html')
 
+
+login page
+@app.route('/login')
+def login():
+   #code here..
+   return render_template('login.html')
+
+
+
 #blog page
 # @app.route('/blog')
 # def blog():
 #     #code here..
 #     return render_template('blog.html')
-
-
-#login page
-# @app.route('/login')
-# def login():
-#    #code here..
-#     return render_template('login.html')
