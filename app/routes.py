@@ -7,20 +7,19 @@ from app import app
 @app.route('/')
 @app.route('/index')
 def index():
-    #code here
-    #...
-    #return render_template('index.html', ..., ...)
+        #code here
+        #...
+    return render_template('index.html')
 
 #blog page
-@app.route('/blog')
-def blog():
-    #code here
-    #...
-    #return render_template('blog.html', ..., ...)
+# @app.route('/blog')
+# def blog():
+#     #code here..
+#     return render_template('blog.html')
 
 
 #login page
-@app.route('/login')
-    #code here
-    #...
-    #return render_template('login.html', ..., ...)
+# @app.route('/login')
+# def login():
+#    #code here..
+#     return render_template('login.html')
