@@ -1,5 +1,6 @@
 <html>
     <head>
+      <link rel="stylesheet" href="{{url_for('.static', filename='css/main.css')}}">
         {% if title %}
         <title>{{ title }} - Satoshis Room</title>
         {% else %}
@@ -10,13 +11,28 @@
   <!--navigation bar "navbar navbar-fixed-top" -->
   {% block navbar %}
     <div class="navbar navbar-dark bg-dark">
-      <a href="/index">Home</a>
-      <a href="/blog">Blog</a>
-      <a href="/login">Login</a>
+      <a href="{{url_for('index')}}">Home</a>
+      <a href="{{url_for('login')}}">Login</a>
     </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li> {{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith%}
+
   {% endblock %}
   <hr>
   <!--page specific content-->
   {% block content %}{% endblock%}
+
+    <footer>
+         <p class="text-center small"> Satoshis Room | 2019</p>
+    </footer>
+
+
 </body>
 </html>
