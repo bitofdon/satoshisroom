@@ -1,1 +1,32 @@
 {% extends "base.html" %}
+
+{% block content %}
+    <h1>Sign In</h1>
+    <form action="" method="post">
+        <!--cross side forgery attacks - wtforms needs form.hidden_tag-->
+        {{ form.hidden_tag() }}
+        <p>
+            <!--references the label we set for our username class variable-->
+            {{ form.username.label }} <br>
+            <!--invoke username field as a function, outputs the HTML for that field-->
+            <!--add size=32 to make username 32 char long-->
+            {{ form.username(size=32) }} <br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }} <br>
+            {{ form.password(size=32) }} <br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.remember_me() }} {{ form.remember_me.label }}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+{% endblock %}
